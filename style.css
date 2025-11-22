@@ -61,3 +61,14 @@ a:hover {
   height: 24px;
   vertical-align: middle;
 }
+
+.news-container {
+  max-height: 200px;   /* 调整窗口可视高度 */
+  overflow-y: auto;    /* 垂直滚动 */
+  padding-right: 10px; /* 避免遮挡滚动条 */
+}
+
+.news-list li {
+  margin-bottom: 12px;
+}
+
