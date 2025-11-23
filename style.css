@@ -1,28 +1,42 @@
-
 body {
     /* font-family: 'Lato', sans-serif; */
     font-family: 'EB Garamond', serif;
     margin: 0;
-    display: flex;
+    /* 不需要再用 flex 布局 body，去掉这行更简单 */
+    /* display: flex; */
 }
+
 #container {
     display: flex;
     width: 100%;
 }
+
+/* 左侧固定，不随滚动移动 */
 #left {
-    width: 25%;
+    position: fixed;       /* 关键：固定在视口 */
+    top: 0;
+    left: 0;
+    width: 25%;            /* 保持你原来的比例 */
+    height: 100vh;         /* 占满整个窗口高度 */
     padding: 20px;
     background-color: #f5f5f5;
     text-align: center;
+    box-sizing: border-box;
 }
+
+/* 右侧整体右移一段距离，避免被左侧遮挡 */
 #right {
-    width: 75%;
+    /* width: 75%;  让宽度自动更合适就行 */
+    margin-left: 25%;      /* 和左侧宽度一致 */
     padding: 20px;
+    box-sizing: border-box;
 }
+
 #profile-pic {
     width: 150px;
     border-radius: 50%;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -33,7 +47,7 @@ ul li {
 
 a {
   text-decoration: none;
-  color: #0645AD; /* or keep it as 'blue' or any hex/RGB value you prefer */
+  color: #0645AD;
 }
 
 a:hover {
@@ -63,12 +77,11 @@ a:hover {
 }
 
 .news-container {
-  max-height: 200px;   /* 调整窗口可视高度 */
-  overflow-y: auto;    /* 垂直滚动 */
-  padding-right: 10px; /* 避免遮挡滚动条 */
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 .news-list li {
   margin-bottom: 12px;
 }
-
