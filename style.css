@@ -1,0 +1,87 @@
+body {
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    /* 不需要再用 flex 布局 body，去掉这行更简单 */
+    /* display: flex; */
+}
+
+#container {
+    display: flex;
+    width: 100%;
+}
+
+/* 左侧固定，不随滚动移动 */
+#left {
+    position: fixed;       /* 关键：固定在视口 */
+    top: 0;
+    left: 0;
+    width: 25%;            /* 保持你原来的比例 */
+    height: 100vh;         /* 占满整个窗口高度 */
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 右侧整体右移一段距离，避免被左侧遮挡 */
+#right {
+    /* width: 75%;  让宽度自动更合适就行 */
+    margin-left: 25%;      /* 和左侧宽度一致 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#profile-pic {
+    width: 150px;
+    border-radius: 50%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #0645AD;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0b0080;
+}
+
+.left-column-icons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.left-column-icons a {
+  margin: 0 5px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.left-column-icons a:hover {
+  transform: scale(1.15);
+}
+
+.icon-small {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.news-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.news-list li {
+  margin-bottom: 12px;
+}
