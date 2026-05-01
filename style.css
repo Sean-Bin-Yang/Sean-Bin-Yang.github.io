@@ -1,87 +1,194 @@
 body {
     /* font-family: 'Lato', sans-serif; */
-    font-family: 'EB Garamond', serif;
+    font-family: 'EB Garamond', Georgia, serif;
     margin: 0;
-    /* 不需要再用 flex 布局 body，去掉这行更简单 */
-    /* display: flex; */
+    color: #222;
+    background-color: #ffffff;
+    font-size: 18px;
+    line-height: 1.55;
 }
 
 #container {
     display: flex;
     width: 100%;
+    min-height: 100vh;
 }
 
-/* 左侧固定，不随滚动移动 */
+/* Left sidebar */
 #left {
-    position: fixed;       /* 关键：固定在视口 */
-    top: 0;
-    left: 0;
-    width: 25%;            /* 保持你原来的比例 */
-    height: 100vh;         /* 占满整个窗口高度 */
-    padding: 20px;
-    background-color: #f5f5f5;
+    width: 250px;
+    min-height: 100vh;
+    padding: 70px 22px 34px 22px;
+    background-color: #f7f7f7;
+    border-right: 1px solid #e5e5e5;
     text-align: center;
     box-sizing: border-box;
+    position: sticky;
+    top: 0;
 }
 
-/* 右侧整体右移一段距离，避免被左侧遮挡 */
+#left h1 {
+    font-size: 30px;
+    margin: 18px 0 20px;
+    line-height: 1.15;
+}
+
+#left p {
+    margin: 14px 0;
+    line-height: 1.35;
+}
+
+/* Right content */
 #right {
-    /* width: 75%;  让宽度自动更合适就行 */
-    margin-left: 25%;      /* 和左侧宽度一致 */
-    padding: 20px;
+    flex: 1;
+    max-width: 1250px;
+    padding: 36px 64px;
     box-sizing: border-box;
 }
 
+/* Profile photo */
 #profile-pic {
-    width: 150px;
+    width: 135px;
+    height: 135px;
     border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-ul li {
-    margin: 5px 0;
+/* Headings with underline */
+h2 {
+    font-size: 28px;
+    margin-top: 36px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d9d9d9;
+    color: #111;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* Links */
 a {
-  text-decoration: none;
-  color: #0645AD;
+    text-decoration: none;
+    color: #0645ad;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #0b0080;
+    text-decoration: underline;
+    color: #0b0080;
 }
 
+/* Social media icons */
 .left-column-icons {
-  margin-top: 10px;
-  text-align: center;
+    margin-top: 14px;
+    text-align: center;
 }
 
 .left-column-icons a {
-  margin: 0 5px;
-  display: inline-block;
-  transition: transform 0.2s ease;
+    margin: 0 5px;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 .left-column-icons a:hover {
-  transform: scale(1.15);
+    transform: scale(1.15);
 }
 
 .icon-small {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }
 
+/* Recent news box */
 .news-container {
-  max-height: 200px;
-  overflow-y: auto;
-  padding-right: 10px;
+    width: 100%;
+    max-width: none;
+    max-height: 330px;
+    overflow-y: auto;
+
+    padding: 20px 24px;
+    margin: 10px 0 32px 0;
+
+    background-color: #f8fbff;
+    border: 1.5px solid #c8d8ee;
+    border-left: 5px solid #0645ad;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+    font-size: 20px;
+    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+/* Recent news list */
+.news-list {
+    list-style-type: square;
+    padding-left: 24px;
+    margin: 0;
 }
 
 .news-list li {
-  margin-bottom: 12px;
+    margin-bottom: 13px;
+}
+
+/* General lists in right content */
+#right ul {
+    list-style-type: square;
+    padding-left: 22px;
+}
+
+#right ol {
+    padding-left: 24px;
+}
+
+#right li {
+    margin-bottom: 10px;
+}
+
+/* Publication list */
+#right ol li {
+    margin-bottom: 14px;
+}
+
+/* Mobile view */
+@media (max-width: 900px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #left {
+        width: 100%;
+        min-height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    #right {
+        max-width: 100%;
+        padding: 28px 24px;
+    }
+
+    body {
+        font-size: 17px;
+    }
+
+    #left h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .news-container {
+        max-height: 360px;
+        font-size: 18px;
+        padding: 16px 18px;
+    }
 }
