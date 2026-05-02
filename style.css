@@ -138,15 +138,28 @@ h2 {
   line-height: 1.55;
 }
 
-/* Recent news */
+/* Recent news scroll box */
 .news-container {
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+  padding: 14px 18px;
   margin-top: 8px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
 }
 
 .news-list {
   list-style-type: square;
   padding-left: 22px;
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.news-list li {
+  margin-bottom: 12px;
 }
 
 /* Publications list */
