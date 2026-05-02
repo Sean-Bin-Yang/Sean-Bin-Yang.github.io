@@ -35,6 +35,37 @@ body {
   box-sizing: border-box;
 }
 
+/* Top navigation bar */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  padding: 14px 0 14px 40px;
+  margin: -30px -40px 35px -40px;
+}
+
+.top-nav a {
+  color: #444444;
+  font-size: 16px;
+  margin-right: 24px;
+  text-decoration: none;
+  font-family: Lato, Arial, sans-serif;
+}
+
+.top-nav a:hover {
+  color: #1f4aa8;
+  text-decoration: none;
+}
+
+/* Avoid section titles being hidden behind sticky nav */
+#home,
+#publications,
+#students {
+  scroll-margin-top: 85px;
+}
+
 /* Profile photo */
 #profile-pic {
   width: 135px;
@@ -161,8 +192,18 @@ strong {
 
   #right {
     margin-left: 0;
-    padding: 24px 20px;
+    padding: 30px 20px;
     max-width: 100%;
+  }
+
+  .top-nav {
+    margin: -30px -20px 30px -20px;
+    padding-left: 20px;
+  }
+
+  .top-nav a {
+    font-size: 15px;
+    margin-right: 18px;
   }
 
   #left h1 {
