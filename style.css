@@ -16,14 +16,10 @@ body {
 
 /* Left sidebar */
 #left {
-    width: 320px;
-    min-width: 320px;
+    width: 360px;
+    min-width: 360px;
     min-height: 100vh;
-
-    padding: 50px 22px 34px 22px;
-
     padding: 70px 28px 34px 28px;
-
     background-color: #f7f7f7;
     border-right: 1px solid #e5e5e5;
     text-align: center;
@@ -42,6 +38,11 @@ body {
 #left p {
     margin: 14px 0;
     line-height: 1.35;
+}
+
+/* Keep sidebar links in one line */
+#left a {
+    white-space: nowrap;
 }
 
 /* Right content */
@@ -189,6 +190,10 @@ a:hover {
     #left h1 {
         font-size: 27px;
         white-space: nowrap;
+    }
+
+    #left a {
+        white-space: normal;
     }
 
     h2 {
