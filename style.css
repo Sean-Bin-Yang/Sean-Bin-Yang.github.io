@@ -139,41 +139,37 @@ h2 {
   margin-bottom: 12px;
 }
 
-/* Research interests */
+/* Research interests section */
 .research-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-bottom: 30px;
 }
 
 .research-card {
-  border: 1px solid #dddddd;
-  border-radius: 6px;
   background-color: #ffffff;
-  padding: 14px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 16px 16px 14px 16px;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 170px;
 }
 
 .research-card h3 {
+  margin: 0 0 10px 0;
   font-size: 16px;
-  line-height: 1.35;
-  margin: 0 0 8px 0;
-  font-weight: bold;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #111111;
 }
 
 .research-card p {
-  font-size: 15px !important;
-  line-height: 1.55 !important;
-  color: #666666;
-  margin: 0 !important;
-}
-
-.research-card:hover {
-  border-color: #1f4aa8;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #777777;
 }
 
 /* Recent news scroll box */
